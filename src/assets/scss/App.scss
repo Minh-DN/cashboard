@@ -1,0 +1,29 @@
+html,
+body,
+#root,
+.layout-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.layout-wrapper {
+  background: #f3f4f6;
+  grid-area: main;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.content-container {
+  grid-area: main;
+  /* box-shadow: inset 2px 1px 9px 1px rgba($dark, 0.10); */
+  overflow: auto;
+
+  
+}
