@@ -6,8 +6,9 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, InputBase, IconButton } from '@mui/material';
-import { useTheme } from '@emotion/react';
+import { useTheme } from '@mui/material';
 import { ColorModeContext, tokens } from '../../theme';
+import '../../assets/scss/layout/header.scss';
 
 const Header = () => {
 
@@ -16,20 +17,19 @@ const Header = () => {
   const colorMode = useContext(ColorModeContext);
 
   return (
-    <Box
-      display="flex"
-      justifyContent="space-between"
-      backgroundColor={colors.primary[400]}
-      p={2}
+    <div
+      className='header-container'
+      style={{ backgroundColor: colors.primary[400] }}
     >
       {/* SEARCH BAR */}
       <Box
+        component={'div'}
         display="flex"
-        backgroundColor={colors.primary[400]}
         borderRadius="3px"
+        style={{ backgroundColor: colors.primary[400] }}
       > 
         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search"/>
-        <IconButton type="Button" sx={{ p: 1 }}>
+        <IconButton sx={{ p: 1 }}>
           <SearchIcon />
         </IconButton>
       </Box>
@@ -53,7 +53,7 @@ const Header = () => {
           <PersonOutlinedIcon />
         </IconButton>
       </Box>
-    </Box>
+    </div>
   )
 }
 
