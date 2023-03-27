@@ -26,6 +26,8 @@ const Sidebar = () => {
   const calcNavLinkStyle = (isActive: boolean, label?: string) => {
 
     const calcPaddingLeft = () => {
+      
+      // Remove the left padding
       // if (!isActive) {
       //   return label ? '40px' : '20px';
       // } else {

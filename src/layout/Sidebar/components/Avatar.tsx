@@ -5,7 +5,7 @@ const Avatar = () => {
   return (
     <div className='avatar-container'>
       <img src={gongYooAvatar} className='avatar-image' />
-      <div className='avatar-username'></div>
+      <div className='avatar-username'>Gong Yoo</div>
     </div>
   )
 }

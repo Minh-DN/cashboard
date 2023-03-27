@@ -66,6 +66,8 @@
   width: 100%;
 
   margin-bottom: 40px;
+
+  transition: padding-left 0.25s ease-in-out;
 }
 
 .sidebar-menu-nav-title {
@@ -73,7 +75,7 @@
   font-weight: 500;
   text-transform: capitalize;
 
-  animation: fade-in 2s;
+  animation: fade-in 1.5s;
 
   white-space: nowrap;
 
@@ -102,7 +104,7 @@
 
 /* Logo Text */
 .sidebar-menu-logo-text {
-  animation: fade-in 2.5s;
+  animation: fade-in 1.5s;
   margin-left: 15px;
   font-size: 20px;
   font-weight: 500;
@@ -131,5 +133,5 @@
 .avatar-username {
   font-size: 18px;
   font-weight: 600;
-  margin-top: 7px;
+  margin-top: 10px;
 }
