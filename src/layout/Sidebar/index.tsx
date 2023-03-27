@@ -1,14 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import SidebarMenu from 'react-bootstrap-sidebar-menu';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { routes } from './components/routes';
-import { ColorModeContext, tokens } from '../../theme';
-import { useTheme } from '@emotion/react';
+import { tokens } from '../../theme';
+import { useTheme } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import { Box } from '@mui/system';
 import { IconButton } from '@mui/material';
 import '../../assets/scss/layout/sidebar.scss';
-import styled from 'styled-components';
 import Avatar from './components/Avatar';
 
 const Sidebar = () => {
@@ -18,14 +16,14 @@ const Sidebar = () => {
   const colors = tokens(theme.palette.mode);
 
   useEffect(() => {
-    localStorage.setItem('sidebarExpanded', expanded);
+    localStorage.setItem('sidebarExpanded', expanded.toString());
   }, [expanded]);
 
   const handleSidebarToggle = () => {
     setExpanded(!expanded);
   };
 
-  const calcNavLinkStyle = (isActive, label) => {
+  const calcNavLinkStyle = (isActive: boolean, label?: string) => {
 
     const calcPaddingLeft = () => {
       // if (!isActive) {
@@ -52,7 +50,7 @@ const Sidebar = () => {
     > 
       {/* HEADER */}
       <SidebarMenu.Header >            
-        { expanded && <LogoText>LeetBoard</LogoText> }
+        { expanded && <span className='sidebar-menu-logo-text'>LeetBoard</span> }
         <div className = 'sidebar-menu-hamburger-icon'> 
           <IconButton onClick={handleSidebarToggle}>
               <MenuOutlinedIcon style={{ fontSize: '28px' }}/>
@@ -91,22 +89,6 @@ const Sidebar = () => {
     </SidebarMenu>
   )
 }
-
-const LogoText = styled.span`
-  animation: fade-in 2.5s;
-  margin-left: 15px;
-  font-size: 20px;
-  font-weight: 500;
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  } 
-`;
 
 export default Sidebar;
 

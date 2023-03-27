@@ -1,22 +1,26 @@
 import React from 'react';
+import { Colors } from '../../../datamodel/theme.d';
 
 import '../../../assets/scss/pages/Dashboard.scss';
 import { rowOneTypes } from '../index';
 
-const StatisticCard = (props) => {
+interface StatisticCardProps {
+  title?: string, 
+  type?: string,
+  value?: string,
+  colors: Colors,
+  outOf?: string
+}
+
+const StatisticCard = (props: StatisticCardProps) => {
 
   const {
     title, 
     type, 
     value,
-    colors
+    colors,
+    outOf
   } = props;
-
-  let outOf = '';
-
-  if (type === rowOneTypes.OUT_OF) {
-    outOf = props.outOf;
-  }
 
   return (
     <div
