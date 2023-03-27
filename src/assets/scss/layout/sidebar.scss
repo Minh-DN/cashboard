@@ -100,3 +100,36 @@
   }
 } 
 
+/* Logo Text */
+.sidebar-menu-logo-text {
+  animation: fade-in 2.5s;
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* Avatar */
+
+.avatar-container {
+  margin-top: 20px;
+  animation: fade-in 1.5s;
+  text-align: center;
+  height: 140px;
+}
+
+.avatar-image {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+
+  border: 2px solid;
+  border-color: inherit;
+}
+
+.avatar-username {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 7px;
+}
