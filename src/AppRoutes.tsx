@@ -2,11 +2,11 @@ import DashboardPage from "./pages/Dashboard";
 
 const AppRoutes = [
   {
-    index: true,
+    path: '/',
     element: <DashboardPage />,
   }, 
   {
-    index: '/team',
+    path: '/team',
     element: <div>Hello</div>
   }
 ]

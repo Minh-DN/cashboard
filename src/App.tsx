@@ -6,22 +6,20 @@ import AppRoutes from './AppRoutes';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [theme, colorMode] = useMode();
+  const theme = useMode();
 
-  return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Layout>
-          <Routes>
-            { AppRoutes.map((route, index) => {
-              const { element, ...rest } = route;
-              return <Route key={`route-${index}`} {...rest} element={element} />
-            })}
-          </Routes>
-        </Layout>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+  return (      
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Layout>
+        <Routes>
+          { AppRoutes.map((route, index) => {
+            const { path, element} = route;
+            return <Route key={`route-${index}`} element={element} path={path}/>
+          })}
+        </Routes>
+      </Layout>
+    </ThemeProvider>
   );
 }
 

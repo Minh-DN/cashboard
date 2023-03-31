@@ -9,12 +9,14 @@ import { Box, InputBase, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material';
 import { ColorModeContext, tokens } from '../../theme';
 import '../../assets/scss/layout/header.scss';
+import { useDispatch } from 'react-redux';
+import { toggleColorMode } from '../../store/themeSlice';
 
 const Header = () => {
 
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(ColorModeContext);
+  const dispatch = useDispatch();
 
   return (
     <div
@@ -36,7 +38,7 @@ const Header = () => {
 
       {/* ICONS MENU */}
       <Box display="flex">
-        <IconButton onClick={colorMode.toggleColorMode}>
+        <IconButton onClick={() => dispatch(toggleColorMode())}>
           {theme.palette.mode === "dark" ? (
             <DarkModeOutlinedIcon />
           ) : (

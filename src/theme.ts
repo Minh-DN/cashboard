@@ -2,6 +2,9 @@ import { createContext, useState, useMemo } from "react";
 import { createTheme } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
 import { Colors } from "./datamodel/theme.d";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "./store/store";
+import { toggleColorMode } from "./store/themeSlice";
 
 // color design tokens export
 export const tokens = (mode: PaletteMode): Colors => ({
@@ -201,17 +204,10 @@ export const ColorModeContext = createContext({
 });
 
 export const useMode = () => {
-  const [mode, setMode] = useState<PaletteMode>("dark");
-
-  const colorMode = useMemo(
-    () => ({
-      toggleColorMode: () =>
-        setMode((prev) => (prev === "light" ? "dark" : "light")),
-    }),
-    []
-  );
-
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
-  return [theme, colorMode];
+  const mode = useSelector((state: RootState) => state.theme.mode);
+  // const theme = useMemo(() => {console.log('changed'); return createTheme(themeSettings(mode))}, [mode]);
+  // why useMemo?
+  const theme = createTheme(themeSettings(mode))
+  return theme;
 };
 
