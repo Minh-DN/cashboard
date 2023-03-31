@@ -8,13 +8,6 @@ export const AppRoutes = [
   }, 
   {
     path: '/team',
-    element: <div>Hellllo</div>
-  },
-]
-
-export const GuestRoutes = [
-  {
-    path: "/sign-in",
-    element: <SignIn />
+    element: <div>Hello</div>
   }
 ]
