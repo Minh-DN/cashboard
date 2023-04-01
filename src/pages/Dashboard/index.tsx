@@ -1,5 +1,5 @@
 import React from 'react'
-import { tokens } from '../../theme';
+import { tokens } from '../../theme/theme';
 import { useTheme } from '@mui/material';
 import './../../assets/scss/pages/Dashboard.scss';
 import StatisticCard from './components/StatisticCard';

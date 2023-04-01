@@ -7,7 +7,7 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, InputBase, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material';
-import { ColorModeContext, tokens } from '../../theme';
+import { ColorModeContext, tokens } from '../../theme/theme';
 import '../../assets/scss/layout/header.scss';
 
 const Header = () => {

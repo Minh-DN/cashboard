@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+import './assets/scss/index.scss';
 import App from './App';
+import SignIn from './pages/authentication/SignIn';
 import {
   createBrowserRouter, 
   RouterProvider,
@@ -12,10 +13,6 @@ const router = createBrowserRouter([
     path: "",
     element: <App />,
     children: [
-      {
-        path: "/team",
-        element: <div>Helo</div>,
-      },
       {
         path: "/team",
         element: <div>Helo</div>,
@@ -44,7 +41,11 @@ const router = createBrowserRouter([
         path: '/over-time',
         element: <div>Helo</div>,
       },
+
     ]
+  },      {
+    path: "/sign-in",
+    element: <SignIn />
   }
 ])
 

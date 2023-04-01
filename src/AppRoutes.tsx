@@ -1,14 +1,20 @@
 import DashboardPage from "./pages/Dashboard";
+import SignIn from "./pages/authentication/SignIn";
 
-const AppRoutes = [
+export const AppRoutes = [
   {
-    index: true,
+    path: '/',
     element: <DashboardPage />,
   }, 
   {
-    index: '/team',
-    element: <div>Hello</div>
-  }
+    path: '/team',
+    element: <div>Hellllo</div>
+  },
 ]
 
-export default AppRoutes;
+export const GuestRoutes = [
+  {
+    path: "/sign-in",
+    element: <SignIn />
+  }
+]

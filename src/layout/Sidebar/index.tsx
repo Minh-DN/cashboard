@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import SidebarMenu from 'react-bootstrap-sidebar-menu';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { routes } from './components/routes';
-import { tokens } from '../../theme';
+import { tokens } from '../../theme/theme';
 import { useTheme } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { IconButton } from '@mui/material';
