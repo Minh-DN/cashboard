@@ -1,21 +1,37 @@
 import { useTheme } from "@mui/material"
-import { tokens, ColorModeContext} from "../../theme/theme";
-
 import '../../assets/scss/authentication/SignIn.scss';
-import { useContext } from "react";
+import { useDispatch } from "react-redux";
+import { toggleColorMode } from "../../store/slices/themeSlice";
+import { toggleAuth } from "../../store/slices/authSlice";
+import { tokens } from "../../theme/theme";
 
 const SignIn = () => {
   const theme = useTheme();
+  const dispatch = useDispatch();
   const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(ColorModeContext);
+
+  const handleToggleTheme = () => {
+    dispatch(toggleColorMode());
+  }
+
+  const handleToggleAuth = () => {
+    dispatch(toggleAuth());
+  }
 
   return (
     <div 
-      className="sign-in-page-wrapper"
-      style={{ backgroundColor: theme.palette.background.default }}
-    >
-      <button onClick={colorMode.toggleColorMode}>Change Theme</button>
+      className="sign-in__wrapper"
+      style={{ backgroundColor: colors.primary[400] }}
+    > 
       
+      <div
+        className="sign-in__form-container"
+        style={{ backgroundColor: colors.primary[700] }}
+      >
+
+      </div>
+      <button onClick={handleToggleTheme}>change theme</button>
+      <button onClick={handleToggleAuth}>sign in</button>
     </div>
   )
 }

@@ -7,10 +7,11 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, InputBase, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material';
-import { ColorModeContext, tokens } from '../../theme/theme';
+import { tokens } from '../../theme/theme';
 import '../../assets/scss/layout/header.scss';
 import { useDispatch } from 'react-redux';
-import { toggleColorMode } from '../../store/themeSlice';
+import { toggleColorMode } from '../../store/slices/themeSlice';
+import { toggleAuth } from '../../store/slices/authSlice';
 
 const Header = () => {
 
@@ -21,7 +22,7 @@ const Header = () => {
   return (
     <div
       className='header-container'
-      style={{ backgroundColor: colors.primary[400] }}
+      style={{ backgroundColor: theme.palette.background.default }}
     >
       {/* SEARCH BAR */}
       <Box
@@ -51,7 +52,7 @@ const Header = () => {
         <IconButton>
           <SettingsOutlinedIcon />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={() => dispatch(toggleAuth())}>
           <PersonOutlinedIcon />
         </IconButton>
       </Box>

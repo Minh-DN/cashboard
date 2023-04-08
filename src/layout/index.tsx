@@ -1,16 +1,14 @@
 import { useTheme } from '@mui/material';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { LayoutRouteProps } from 'react-router-dom';
 import SignIn from '../pages/authentication/SignIn';
+import { selectAuthState } from '../store/slices/authSlice';
 import Header from './Header';
 import Sidebar from './Sidebar';
 
 const Layout = (props: LayoutRouteProps) => {
   const theme = useTheme();
-
-  const [auth, setAuth] = useState(false);
-
-  const handleAuth = () => setAuth(!auth);
+  const auth = useSelector(selectAuthState);
 
   return (
     <div 
@@ -19,7 +17,7 @@ const Layout = (props: LayoutRouteProps) => {
     >
       { auth ?
           <>
-            <Header /><button onClick={handleAuth}>Sign out</button>
+            <Header />
             <Sidebar />
       
             <main className='content-container'>
@@ -27,7 +25,7 @@ const Layout = (props: LayoutRouteProps) => {
             </main>
           </>
         : 
-        <><SignIn /><button onClick={handleAuth}>Sign IN</button></>
+        <SignIn />
       }
     </div>
   )

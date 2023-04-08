@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { store } from './store/store';
-import './index.scss';
+import './assets/scss/index.scss';
 import App from './App';
 import SignIn from './pages/authentication/SignIn';
 import {
@@ -43,11 +43,11 @@ const router = createBrowserRouter([
         path: '/over-time',
         element: <div>Helo</div>,
       },
-
+      {
+        path: "/sign-in",
+        element: <SignIn />
+      }
     ]
-  },      {
-    path: "/sign-in",
-    element: <SignIn />
   }
 ])
 

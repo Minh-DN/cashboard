@@ -18,34 +18,34 @@ export const routes = [
     label: 'Manage Team',
     link: '/team'
   },
-  {
-    icon: <PersonOutlinedIcon />,
-    label: 'Create User',
-    link: '/create-user'
-  },
-  {
-    icon: <CalendarTodayOutlinedIcon />,
-    label: 'Calendar',
-    link: '/calendar'
-  },
-  {
-    icon: <HelpOutlineOutlinedIcon />,
-    label: 'FAQ',
-    link: '/faq'
-  },
-  {
-    icon: <BarChartOutlinedIcon />,
-    label: 'By Category',
-    link: '/by-category'
-  },
-  {
-    icon: <PieChartOutlineOutlinedIcon />,
-    label: 'By Total',
-    link: '/by-total'
-  },
-  {
-    icon: <TimelineOutlinedIcon />,
-    label: 'Over Time',
-    link: '/over-time'
-  },
+  // {
+  //   icon: <PersonOutlinedIcon />,
+  //   label: 'Create User',
+  //   link: '/create-user'
+  // },
+  // {
+  //   icon: <CalendarTodayOutlinedIcon />,
+  //   label: 'Calendar',
+  //   link: '/calendar'
+  // },
+  // {
+  //   icon: <HelpOutlineOutlinedIcon />,
+  //   label: 'FAQ',
+  //   link: '/faq'
+  // },
+  // {
+  //   icon: <BarChartOutlinedIcon />,
+  //   label: 'By Category',
+  //   link: '/by-category'
+  // },
+  // {
+  //   icon: <PieChartOutlineOutlinedIcon />,
+  //   label: 'By Total',
+  //   link: '/by-total'
+  // },
+  // {
+  //   icon: <TimelineOutlinedIcon />,
+  //   label: 'Over Time',
+  //   link: '/over-time'
+  // },
 ]
