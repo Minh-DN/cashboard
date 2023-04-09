@@ -6,6 +6,7 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
+import BiotechIcon from '@mui/icons-material/Biotech';
 
 export const routes = [
   {
@@ -14,8 +15,8 @@ export const routes = [
     link: '/'
   },
   {
-    icon: <PeopleOutlinedIcon />,
-    label: 'Manage Team',
+    icon: <BiotechIcon />,
+    label: 'Test Area',
     link: '/team'
   },
   // {

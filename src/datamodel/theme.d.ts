@@ -17,7 +17,3 @@ export interface Colors {
   redAccent: Color,
   blueAccent: Color
 }
-
-export interface ColorModeType {
-  toggleColorMode: () => void
-}

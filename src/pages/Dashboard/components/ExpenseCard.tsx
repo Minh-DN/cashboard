@@ -2,13 +2,13 @@ import { useTheme } from "@mui/material";
 import { tokens } from "../../../theme/theme";
 
 import { GiPayMoney } from "react-icons/gi";
-import { formatMoney } from "../helper";
+import { formatMoney } from "../../../components/helper";
 import PieChart from "../../../components/PieChart";
 import { PieChartData, PieChartType } from "../../../datamodel/charts.d";
 import { HiArrowNarrowDown, HiArrowNarrowUp } from "react-icons/hi";
 
 interface ExpenseCardProps {
-  value: number,
+  amount: number,
   change: number,
   budget: number
 }
@@ -17,12 +17,12 @@ const ExpenseCard = (props: ExpenseCardProps) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const { value, change, budget } = props;
-  const formattedValue = formatMoney(value);
+  const { amount, change, budget } = props;
+  const formattedAmount = formatMoney(amount);
   const negative = change < 0;
 
   const formPieChartData = (): PieChartData[] => {
-    const remainingOnBudget = budget - value; 
+    const remainingOnBudget = budget - amount; 
 
     const data = [
       {
@@ -30,14 +30,14 @@ const ExpenseCard = (props: ExpenseCardProps) => {
         value: remainingOnBudget,
         color: `${colors.grey[500]}`,
         label: 'Remaning on buget: ',
-        formattedValue: formatMoney(remainingOnBudget),
+        formattedAmount: formatMoney(remainingOnBudget),
       },
       {
         id: 'expense',
-        value: value,
+        value: amount,
         color: `${colors.greenAccent[500]}`,
         label: 'Total Expense: ',
-        formattedValue: formatMoney(value),
+        formattedAmount: formatMoney(amount),
       },
     ]
     return data;
@@ -54,7 +54,7 @@ const ExpenseCard = (props: ExpenseCardProps) => {
           className="icon" 
           style={{ color: colors.greenAccent[500] }}
         />
-        <div className="value">{formattedValue}</div>
+        <div className="amount">{formattedAmount}</div>
         <div 
           className="label" 
           style={{ color: colors.greenAccent[500] }}

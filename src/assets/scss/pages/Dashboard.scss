@@ -11,8 +11,12 @@
 }
 
 .dashboard-rows-container {
+  // display: flex;
+  // flex-direction: column;
+
   display: grid;
-  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-rows: 1fr 2.5fr 1.5fr;
+
   gap: 20px;
 
   height: 100%;
@@ -22,6 +26,8 @@
 .dashboard__row-one {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  //height: 120px;
 
   gap: 20px;
 }
@@ -46,7 +52,7 @@
   .icon {
     font-size: 1.5em;
   }
-  .value {
+  .amount {
     margin-top: 5px;
     font-size: 1.6em;
     font-weight: 800;
@@ -90,7 +96,7 @@
   border-radius: 7px;
   min-width: 250px;
 
-  .value {
+  .amount {
     font-weight: 800;
     line-height: 1.1em;
     font-size: 3em;
@@ -101,16 +107,49 @@
   }
 }
 
+/* Row 2 */
 .dashboard__row-two {
   display: grid;
-  grid-template-columns: 2.5fr 1.5fr;
+  grid-template-columns: 1fr 1.5fr;
 
+  //height: 400px;
+  
   gap: 20px;
+}
+
+/* Expense Breakdown Card */
+.dashboard__expense-breakdown-card {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 15px 10px 15px;
+  border-radius: 7px;
+  
+  .title {
+    //width: 100%;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .chart {
+    height: 250px;
+    width: 450px;
+
+    text {
+      font-weight: 700;
+    }
+  }
 }
 
 .dashboard__row-three {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  //height: 200px;
 
   gap: 20px;
 }

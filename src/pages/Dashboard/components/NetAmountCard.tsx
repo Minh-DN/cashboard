@@ -1,31 +1,30 @@
 import { useTheme } from "@mui/material";
 import { GiCash } from "react-icons/gi";
 import { tokens } from "../../../theme/theme";
-import { formatMoney } from "../helper";
-
-interface NetValueCardProps {
-  value: number,
+import { formatMoney } from "../../../components/helper";
+interface NetAmountCardProps {
+  amount: number,
 }
 
-const NetValueCard = (props: NetValueCardProps) => {
+const NetAmountCard = (props: NetAmountCardProps) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const negative = props.value < 0;
-  const formattedValue = formatMoney(props.value);
+  const negative = props.amount < 0;
+  const formattedAmount = formatMoney(props.amount);
 
   return (
     <div className="net-income-card" style={{ background: colors.primary[400] }}>
       <GiCash style={{ color: colors.greenAccent[500] }}/>
       <div 
-        className="value" 
+        className="amount" 
         style={{ color: negative ? theme.palette.error.main : ''}}
       >
-        {formattedValue}
+        {formattedAmount}
       </div>
       <div style={{ color: colors.greenAccent[500] }}>Net</div>
     </div>
   )
 }
 
-export default NetValueCard;
+export default NetAmountCard;

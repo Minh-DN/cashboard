@@ -2,11 +2,11 @@ import { useTheme } from "@mui/material";
 import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
 import { PieChartData, PieChartType } from "../../../datamodel/charts.d";
 import { tokens } from "../../../theme/theme";
-import { formatMoney } from "../helper";
+import { formatMoney } from "../../../components/helper";
 import PieChart from "../../../components/PieChart";
 
 interface SavingsContributionCardProps {
-  value: number,
+  amount: number,
   target: number
 }
 
@@ -14,9 +14,9 @@ const SavingsContributionCard = (props: SavingsContributionCardProps) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const { value, target } = props;
-  const formattedValue = formatMoney(value)
-  const diffFromTarget = target - value; 
+  const { amount, target } = props;
+  const formattedAmount = formatMoney(amount)
+  const diffFromTarget = target - amount; 
   const formattedDiff = formatMoney(diffFromTarget);
 
   const formPieChartData = (): PieChartData[] => {
@@ -26,14 +26,14 @@ const SavingsContributionCard = (props: SavingsContributionCardProps) => {
         value: diffFromTarget,
         color: `${colors.grey[500]}`,
         label: 'Until Target: ',
-        formattedValue: formatMoney(diffFromTarget),
+        formattedAmount: formatMoney(diffFromTarget),
       },
       {
         id: 'income',
-        value: value,
+        value: amount,
         color: `${colors.greenAccent[500]}`,
         label: 'Savings Contributed: ',
-        formattedValue: formatMoney(value),
+        formattedAmount: formatMoney(amount),
       }, 
     ]
     return data;
@@ -50,12 +50,12 @@ const SavingsContributionCard = (props: SavingsContributionCardProps) => {
           className="icon" 
           style={{ color: colors.greenAccent[500] }}
         />
-        <div className="value">{formattedValue}</div>
+        <div className="amount">{formattedAmount}</div>
         <div 
           className="label" 
           style={{ color: colors.greenAccent[500] }}
         >
-          Savings Contributed
+          Savings Contribution
         </div>
       </div>
 

@@ -7,12 +7,14 @@ export interface PieChartProps {
 export interface PieChartData {
   id: string,
   value: number,
-  color: string,
   label: string,
-  formattedValue: string,
+  color?: string,
+  formattedAmount?: string,
 }
 
 export enum PieChartType {
   DASHBOARD_KEY_STAT,
+  DASHBOARD_BREAKDOWN
 }
 
+  
