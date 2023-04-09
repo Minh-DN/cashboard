@@ -10,7 +10,7 @@ const PieChart = (props: PieChartProps) => {
   
   const { data, type } = props;
 
-  const typeSpecificProps = getPieChartTypeSpecificProps(type);
+  const typeSpecificProps = getPieChartTypeSpecificProps(type, colors);
 
   return (
     <ResponsivePie 
@@ -22,6 +22,15 @@ const PieChart = (props: PieChartProps) => {
             background: colors.grey[900]
           },
         },
+      }}
+      borderColor={{
+        from: 'color',
+        modifiers: [
+          [
+            'darker',
+            0.7
+          ]
+        ]
       }}
       tooltip={({ datum: { data, color } }) => (
         <div 
@@ -38,6 +47,8 @@ const PieChart = (props: PieChartProps) => {
             switch (type) {
               case PieChartType.DASHBOARD_KEY_STAT:
                 return <DashboardKeyStatTooltip {...data} />;
+              case PieChartType.DASHBOARD_BREAKDOWN:
+                return <DashboardExpenseBreakdownTooltip {...data}/>
               default:
                 return null;
             }
@@ -49,11 +60,19 @@ const PieChart = (props: PieChartProps) => {
 }
 
 const DashboardKeyStatTooltip = (props: PieChartData) => {
-
   return (
     <div>
       <b>{props.label}</b>
-      <span>{props.formattedValue}</span>
+      <span>{props.formattedAmount}</span>
+    </div>
+  )
+}
+
+const DashboardExpenseBreakdownTooltip = (props: PieChartData) => {
+  return (
+    <div>
+      <b>{props.label}: </b>
+      <span>{props.formattedAmount}</span>
     </div>
   )
 }

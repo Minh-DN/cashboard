@@ -5,11 +5,11 @@ import PieChart from "../../../components/PieChart";
 import { GiReceiveMoney } from "react-icons/gi";
 import { HiArrowNarrowUp, HiArrowNarrowDown } from "react-icons/hi";
 
-import { formatMoney } from '../helper';
+import { formatMoney } from "../../../components/helper";
 import { PieChartData, PieChartType } from "../../../datamodel/charts.d";
 
 interface IncomeCardProps {
-  value: number,
+  amount: number,
   change: number,
   target: number
 }
@@ -18,12 +18,12 @@ const IncomeCard = (props: IncomeCardProps) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  const { value, change, target } = props;
-  const formattedValue = formatMoney(value)
+  const { amount, change, target } = props;
+  const formattedAmount = formatMoney(amount)
   const negative = change < 0;
 
   const formPieChartData = (): PieChartData[] => {
-    const diffFromTarget = target - value; 
+    const diffFromTarget = target - amount; 
 
     const data = [
       {
@@ -31,14 +31,14 @@ const IncomeCard = (props: IncomeCardProps) => {
         value: diffFromTarget,
         color: `${colors.grey[500]}`,
         label: 'Until Target: ',
-        formattedValue: formatMoney(diffFromTarget),
+        formattedAmount: formatMoney(diffFromTarget),
       },
       {
         id: 'income',
-        value: value,
+        value: amount,
         color: `${colors.greenAccent[500]}`,
         label: 'Total Income: ',
-        formattedValue: formatMoney(value),
+        formattedAmount: formatMoney(amount),
       }, 
     ]
     return data;
@@ -55,7 +55,7 @@ const IncomeCard = (props: IncomeCardProps) => {
           className="icon" 
           style={{ color: colors.greenAccent[500] }}
         />
-        <div className="value">{formattedValue}</div>
+        <div className="amount">{formattedAmount}</div>
         <div 
           className="label" 
           style={{ color: colors.greenAccent[500] }}

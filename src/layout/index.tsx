@@ -19,7 +19,7 @@ const Layout = (props: LayoutRouteProps) => {
           <>
             <Header />
             <Sidebar />
-      
+          
             <main className='content-container'>
               {props.children}
             </main>

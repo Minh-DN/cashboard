@@ -7,7 +7,8 @@ import BlankCell from './components/BlankCell';
 import * as mockData from '../../assets/mockData/mockData';
 import ExpenseCard from './components/ExpenseCard';
 import SavingsContributionCard from './components/SavingsContributionCard';
-import NetValueCard from './components/NetValueCard';
+import NetAmountCard from './components/NetAmountCard';
+import ExpenseBreakdownCard from './components/ExpenseBreakdownCard';
 
 const DashboardPage = () => {
   const theme = useTheme();
@@ -18,6 +19,7 @@ const DashboardPage = () => {
     mockExpenseData,
     mockSavingsContributionData,
     mockNetData,
+    mockExpenseBreakdownData
   } = mockData;
 
   return (
@@ -33,12 +35,12 @@ const DashboardPage = () => {
           <IncomeCard {...mockIncomeData} />
           <ExpenseCard {...mockExpenseData} />
           <SavingsContributionCard {...mockSavingsContributionData} />
-          <NetValueCard {...mockNetData} />
+          <NetAmountCard {...mockNetData} />
         </div>
 
         {/* ROW 2 */}
         <div className='dashboard__row-two'>
-          <BlankCell />
+          <ExpenseBreakdownCard data={mockExpenseBreakdownData} />
           <BlankCell />
         </div>
 
@@ -56,35 +58,3 @@ const DashboardPage = () => {
 
 export default DashboardPage;
 
-export const rowOneTypes = {
-  OUT_OF: 'OUT_OF',
-  PERCENTAGE: 'PERCENTAGE',
-  NUMBER: 'NUMBER'
-}
-
-const mockRow1Data = [
-  {
-    title: 'Problems Solved',
-    type: rowOneTypes.OUT_OF,
-    value: 32,
-    outOf: 150,
-  },
-  {
-    title: 'Problems Solved',
-    type: rowOneTypes.OUT_OF,
-    value: 32,
-    outOf: 150,
-  },
-  {
-    title: 'Problems Solved',
-    type: rowOneTypes.OUT_OF,
-    value: 32,
-    outOf: 150,
-  },
-  {
-    title: 'Problems Solved',
-    type: rowOneTypes.OUT_OF,
-    value: 32,
-    outOf: 150,
-  },
-]
