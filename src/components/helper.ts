@@ -24,7 +24,7 @@ export const getPieChartTypeSpecificProps = (type: PieChartType, colors: Colors)
         borderWidth: 3,
         enableArcLabels: false,
         arcLinkLabel: (datum: ComputedDatum<PieChartData>) => `${datum.label}: ${datum.data.formattedAmount}`,
-        arcLinkLabelsTextColor: colors.greenAccent[100],
+        arcLinkLabelsTextColor: colors.grey[100],
         arcLinkLabelsThickness: 2,
         arcLinkLabelsColor:{ from: 'color' },
         arcLinkLabelsStraightLength: 12,

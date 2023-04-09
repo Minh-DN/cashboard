@@ -52,7 +52,7 @@ const Sidebar = () => {
     > 
       {/* HEADER */}
       <SidebarMenu.Header >            
-        { expanded && <span className='sidebar-menu-logo-text'>LeetBoard</span> }
+        { expanded && <span className='sidebar-menu-logo-text'>CashBoard</span> }
         <div className = 'sidebar-menu-hamburger-icon'> 
           <IconButton onClick={handleSidebarToggle}>
               <MenuOutlinedIcon style={{ fontSize: '28px' }}/>
