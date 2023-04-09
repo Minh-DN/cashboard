@@ -6,4 +6,12 @@ import svgrPlugin from 'vite-plugin-svgr';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
+  build: {
+    outDir: 'dist',
+    //@ts-ignore
+    base: '/my-app/',
+    rollupOptions: {
+      input: '/src/index.tsx', // Change this to your app's entry point
+    },
+  },
 });
