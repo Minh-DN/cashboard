@@ -10,7 +10,7 @@ export default defineConfig({
     //@ts-ignore
     base: '/',
     rollupOptions: {
-      input: '/src/index.tsx', // Change this to your app's entry point
+      input: '/index.html'
     },
   },
 });
