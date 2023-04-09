@@ -10,7 +10,7 @@ export default defineConfig({
     //@ts-ignore
     base: '/',
     rollupOptions: {
-      input: '/index.html'
+      input: './index.html'
     },
   },
 });
