@@ -129,7 +129,6 @@
   border-radius: 7px;
   
   .title {
-    //width: 100%;
     font-weight: 900;
     font-size: 16px;
     line-height: 16px;
@@ -141,6 +140,7 @@
 
     text {
       font-weight: 700;
+      color: 'white';
     }
   }
 }
@@ -154,6 +154,12 @@
   gap: 20px;
 }
 
+/* Add Box Shadow to Cards */
+.dashboard__key-stats-card,
+.net-income-card,
+.dashboard__expense-breakdown-card {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
 
 
 
