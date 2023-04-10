@@ -5,12 +5,4 @@ import svgrPlugin from 'vite-plugin-svgr';
 
 export default defineConfig({
   plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
-  build: {
-    outDir: 'dist',
-    //@ts-ignore
-    base: '/',
-    rollupOptions: {
-      input: './index.html'
-    },
-  },
 });

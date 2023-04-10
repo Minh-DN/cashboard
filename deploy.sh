@@ -11,7 +11,7 @@ cd dist
 
 # initializes a new Git repository, commits the built app
 git init
-git add -A
+git add .
 git commit -m 'Deploy'
 
 # deploying to https://<USERNAME>.github.io/<REPO>
