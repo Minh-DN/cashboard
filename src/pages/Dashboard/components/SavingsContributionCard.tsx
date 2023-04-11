@@ -1,7 +1,7 @@
 import { useTheme } from "@mui/material";
 import SavingsRoundedIcon from '@mui/icons-material/SavingsRounded';
 import { PieChartData, PieChartType } from "../../../datamodel/charts.d";
-import { tokens } from "../../../theme/theme";
+import { tokens } from "../../../assets/theme/theme";
 import { formatMoney } from "../../../components/helper";
 import PieChart from "../../../components/PieChart";
 

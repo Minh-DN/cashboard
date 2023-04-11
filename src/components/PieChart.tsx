@@ -2,7 +2,7 @@ import { ResponsivePie } from "@nivo/pie";
 import { PieChartData, PieChartProps, PieChartType } from "../datamodel/charts.d";
 import { getPieChartTypeSpecificProps } from "./helper";
 import { useTheme } from "@mui/material";
-import { tokens } from "../theme/theme";
+import { tokens } from "../assets/theme/theme";
 
 const PieChart = (props: PieChartProps) => {
   const theme = useTheme();

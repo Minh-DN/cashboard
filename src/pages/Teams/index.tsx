@@ -1,7 +1,7 @@
 import { ResponsivePie } from "@nivo/pie";
 import PieChart from "../../components/PieChart";
 import { useTheme } from "@mui/material";
-import { tokens } from "../../theme/theme";
+import { tokens } from "../../assets/theme/theme";
 
 const data = [
   {

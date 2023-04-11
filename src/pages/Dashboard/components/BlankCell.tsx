@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/material";
-import { tokens } from "../../../theme/theme";
+import { tokens } from "../../../assets/theme/theme";
 
 import { GiPayMoney } from 'react-icons/gi'
 

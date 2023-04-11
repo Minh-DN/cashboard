@@ -1,10 +1,10 @@
-import { useColorMode } from './theme/theme';
+import { useColorMode } from './assets/theme/theme';
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import './assets/scss/App.scss';
-import Layout from './layout';
-import { AppRoutes } from './routes/AppRoutes';
-import { Routes, Route } from 'react-router-dom';
-import PrivateRoute from './routes/PrivateRoute';
+import Layout from './pages/layout/index';
+import { AppRoutes } from './AppRoutes';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   const theme = useColorMode();
@@ -14,6 +14,10 @@ function App() {
       <CssBaseline />
       <Layout>
         <Routes>
+          <Route
+            path="/"
+            element={<Navigate to="/dashboard" replace />}
+          />
           { AppRoutes.map((route, index) => {
             const { path, element} = route;
             return <Route

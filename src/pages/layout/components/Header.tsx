@@ -7,11 +7,12 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { Box, InputBase, IconButton } from '@mui/material';
 import { useTheme } from '@mui/material';
-import { tokens } from '../../theme/theme';
-import '../../assets/scss/layout/header.scss';
+import { tokens } from '../../../assets/theme/theme';
+import '../../../assets/scss/pages/header.scss';
 import { useDispatch } from 'react-redux';
-import { toggleColorMode } from '../../store/slices/themeSlice';
-import { toggleAuth } from '../../store/slices/authSlice';
+import { toggleColorMode } from '../../../redux/slices/themeSlice';
+import { toggleAuth } from '../../../redux/slices/authSlice';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
 

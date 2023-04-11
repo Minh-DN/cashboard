@@ -1,15 +1,24 @@
 import { useTheme } from "@mui/material"
-import '../../assets/scss/authentication/SignIn.scss';
-import { useDispatch } from "react-redux";
-import { toggleColorMode } from "../../store/slices/themeSlice";
-import { toggleAuth } from "../../store/slices/authSlice";
-import { tokens } from "../../theme/theme";
+import '../../assets/scss/pages/SignIn.scss';
+import { useDispatch, useSelector } from "react-redux";
+import { toggleColorMode } from "../../redux/slices/themeSlice";
+import { selectAuthState, toggleAuth } from "../../redux/slices/authSlice";
+import { tokens } from "../../assets/theme/theme";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const SignIn = () => {
   const theme = useTheme();
   const dispatch = useDispatch();
+  const auth = useSelector(selectAuthState);
+  const navigate = useNavigate();
+  const { state } = useLocation();
+ 
   const colors = tokens(theme.palette.mode);
-
+  
+  if (auth) {
+    navigate(state?.path || '/');
+  }
+  
   const handleToggleTheme = () => {
     dispatch(toggleColorMode());
   }

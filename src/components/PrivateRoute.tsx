@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { selectAuthState } from "../store/slices/authSlice";
+import { selectAuthState } from "../redux/slices/authSlice";
 
 interface PrivateRouteProps {
   children: ReactElement,

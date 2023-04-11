@@ -1,61 +1,45 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { store } from './store/store';
-import './assets/scss/index.scss';
+import { store } from './redux/store';
 import App from './App';
-import SignIn from './pages/authentication/SignIn';
-import {
-  createBrowserRouter, 
-  RouterProvider,
-} from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
+import SignIn from './pages/authentication/SignIn';
+import './assets/scss/index.scss';
+import TeamsPage from './pages/teams';
+import DashboardPage from './pages/dashboard';
 
-const router = createBrowserRouter([
-  {
-    path: "",
+const isProduction = process.env.NODE_ENV === 'production'; 
+
+const router = createBrowserRouter(
+  [{
+    path: "/",
     element: <App />,
     children: [
       {
+        path: "/dashboard",
+        element: <DashboardPage />
+      },
+      {
         path: "/team",
-        element: <div>Helo</div>,
-      },
-      {
-        path: '/create-user',
-        element: <div></div>
-      },
-      {
-        path: '/calendar',
-        element: <div>Helo</div>,
-      },
-      {
-        path: '/faq',
-        element: <div>Helo</div>,
-      },
-      {
-        path: '/by-category',
-        element: <div>Helo</div>,
-      },
-      {
-        path: '/by-total',
-        element: <div>Helo</div>,
-      },
-      {
-        path: '/over-time',
-        element: <div>Helo</div>,
+        element: <TeamsPage />
       },
       {
         path: "/sign-in",
         element: <SignIn />
       }
     ]
+  }], 
+  { 
+    basename: isProduction ? "/cashboard" : ''
   }
-])
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}/>
     </Provider>
   </React.StrictMode>
 );
