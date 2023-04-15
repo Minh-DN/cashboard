@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react';
 import SidebarMenu from 'react-bootstrap-sidebar-menu';
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { routes } from './components/routes';
-import { tokens } from '../../theme/theme';
+import { routes } from './routes';
+import { tokens } from '../../../assets/theme/theme';
 import { useTheme } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { IconButton } from '@mui/material';
-import '../../assets/scss/layout/sidebar.scss';
-import Avatar from './components/Avatar';
+import '../../../assets/scss/pages/sidebar.scss';
+import Avatar from './Avatar';
 
 const Sidebar = () => {
-  const [ expanded, setExpanded ] = useState(localStorage.getItem('sidebarExpanded') === 'true');
+  const [ expanded, setExpanded ] = useState(localStorage.getItem('sidebarExpanded') !== 'false');
   
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);

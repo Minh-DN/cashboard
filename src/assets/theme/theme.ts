@@ -1,8 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 import { PaletteMode } from "@mui/material";
-import { Colors } from "../datamodel/theme.d";
+import { Colors } from "../../datamodel/theme";
 import { useSelector } from "react-redux";
-import { RootState } from "../store/store";
+import { RootState } from "../../redux/store";
 
 // color design tokens export
 export const tokens = (mode: PaletteMode): Colors => ({

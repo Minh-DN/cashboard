@@ -1,14 +1,15 @@
-import { tokens } from '../../theme/theme';
+import { tokens } from '../../assets/theme/theme';
 import { useTheme } from '@mui/material';
-import './../../assets/scss/pages/Dashboard.scss';
-import IncomeCard from './components/IncomeCard';
-import BlankCell from './components/BlankCell';
 
+import './../../assets/scss/pages/dashboard.scss';
 import * as mockData from '../../assets/mockData/mockData';
+
+import IncomeCard from './components/IncomeCard';
 import ExpenseCard from './components/ExpenseCard';
 import SavingsContributionCard from './components/SavingsContributionCard';
 import NetAmountCard from './components/NetAmountCard';
 import ExpenseBreakdownCard from './components/ExpenseBreakdownCard';
+import BlankCell from './components/BlankCell';
 
 const DashboardPage = () => {
   const theme = useTheme();

@@ -1,6 +1,6 @@
 import { useTheme } from "@mui/material";
 import { GiCash } from "react-icons/gi";
-import { tokens } from "../../../theme/theme";
+import { tokens } from "../../../assets/theme/theme";
 import { formatMoney } from "../../../components/helper";
 interface NetAmountCardProps {
   amount: number,
