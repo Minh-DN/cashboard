@@ -2,22 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { store } from './redux/store';
 import App from './App';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Navigate, RouterProvider, createHashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux';
 import SignIn from './pages/authentication/SignIn';
 import './assets/scss/index.scss';
 import TeamsPage from './pages/teams';
 import DashboardPage from './pages/dashboard';
 
-const isProduction = process.env.NODE_ENV === 'production'; 
-
-const router = createBrowserRouter(
+/** 
+ * Using HashRouter instead of BrowserRouter 
+ * because GitHub Pages does not natively support single-page applications
+ */
+const router = createHashRouter(
   [{
     path: "/",
     element: <App />,
     children: [
       {
-        path: "/dashboard",
+        index: true,
         element: <DashboardPage />
       },
       {
@@ -27,12 +29,13 @@ const router = createBrowserRouter(
       {
         path: "/sign-in",
         element: <SignIn />
+      },
+      {
+        path: "*",
+        element: <Navigate to='/' replace/>
       }
     ]
-  }], 
-  { 
-    basename: isProduction ? "/cashboard" : ''
-  }
+  }],
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);

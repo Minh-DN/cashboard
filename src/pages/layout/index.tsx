@@ -21,7 +21,7 @@ const Layout = (props: LayoutRouteProps) => {
             <Sidebar />
           
             <main className='content-container'>
-              {props.children}
+              <Outlet />
             </main>
           </>
         : 

@@ -14,10 +14,6 @@ function App() {
       <CssBaseline />
       <Layout>
         <Routes>
-          <Route
-            path="/"
-            element={<Navigate to="/dashboard" replace />}
-          />
           { AppRoutes.map((route, index) => {
             const { path, element} = route;
             return <Route

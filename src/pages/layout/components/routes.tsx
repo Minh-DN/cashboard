@@ -12,7 +12,7 @@ export const routes = [
   {
     icon: <HomeOutlinedIcon />,
     label: 'Dashboard',
-    link: '/dashboard'
+    link: '/'
   },
   {
     icon: <BiotechIcon />,
