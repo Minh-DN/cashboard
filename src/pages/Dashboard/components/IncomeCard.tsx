@@ -47,8 +47,8 @@ const IncomeCard = (props: IncomeCardProps) => {
   return (
     <div
       className="dashboard__key-stats-card"
-      style={{ backgroundColor: colors.primary[400] }
-      }>
+      style={{ backgroundColor: colors.primary[400] }}
+    >
 
       <div className="dashboard__key-stats-left">
         <GiReceiveMoney 

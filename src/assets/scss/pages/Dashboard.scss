@@ -146,6 +146,24 @@
   }
 }
 
+/* Recent Transactions Card */
+.dashboard__recent-transactions-card {
+  border-radius: 7px;
+  overflow: hidden;
+
+  height: 200px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard__transaction-item {
+  height: 40px;
+  width: 100%;
+  background-color: brown;
+}
+
 .dashboard__row-three {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
