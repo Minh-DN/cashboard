@@ -1,6 +1,6 @@
 import { useColorMode } from './assets/theme/theme';
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import './assets/scss/App.scss';
+import './assets/scss/app.scss';
 import Layout from './pages/layout/index';
 import { AppRoutes } from './AppRoutes';
 import { Routes, Route, Navigate } from 'react-router-dom';

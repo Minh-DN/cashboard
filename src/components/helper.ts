@@ -1,9 +1,9 @@
 
 import { ComputedDatum } from "@nivo/pie";
-import { PieChartData, PieChartType } from "../datamodel/charts.d";
+import { BarChartType, PieChartData, PieChartType } from "../datamodel/charts.d";
 import { Colors } from "../datamodel/theme";
 
-// Return preset properties for each type of pie charts
+/* Return preset properties for each type of pie charts */
 export const getPieChartTypeSpecificProps = (type: PieChartType, colors: Colors) => {
   switch (type) {
     case PieChartType.DASHBOARD_KEY_STAT:
@@ -18,9 +18,9 @@ export const getPieChartTypeSpecificProps = (type: PieChartType, colors: Colors)
       }
     case PieChartType.DASHBOARD_BREAKDOWN:
       return {
-        margin: { top: 40, right: 80, bottom: 50, left: 100 },
+        margin: { top: 40, right: 70, bottom: 50, left: 90 },
         cornerRadius: 3,
-        activeOuterRadiusOffset: 15,
+        activeOuterRadiusOffset: 10,
         borderWidth: 3,
         enableArcLabels: false,
         arcLinkLabel: (datum: ComputedDatum<PieChartData>) => `${datum.label}: ${datum.data.formattedAmount}`,
@@ -30,6 +30,25 @@ export const getPieChartTypeSpecificProps = (type: PieChartType, colors: Colors)
         arcLinkLabelsStraightLength: 12,
         arcLinkLabelsDiagonalLength: 20,
       };
+  }
+}
+
+/* Return preset properties for each type of bar charts */
+export const getBarChartTypeSpecificProps = (type: BarChartType) => {
+  switch (type) {
+    case BarChartType.DASHBOARD_ACCOUNTS_BREAKDOWN: 
+      return {
+        margin: { top: 5, right: 140, bottom: 5, left: 20 },
+        padding: 0.3,
+        layout: <const> 'horizontal',
+        axisTop: null,
+        axisRight: null,
+        axisBottom: null,
+        axisLeft: null,
+        enableGridY: false,
+        labelSkipWidth: 10,
+        enableLabel: false,
+      }
   }
 }
 
@@ -46,16 +65,13 @@ export function formatMoney(amount: number): string {
   let numProcessed = 0;
 
   for (let i = chars.length - 1; i >= 0; i--) {
-    if (chars[i] === '.') {
-      break;
-    }
-    if (numProcessed % 3 === 0 && numProcessed !== 0) {
+    if (numProcessed % 3 === 0 && numProcessed !== 0 && chars[i + 1] !== ".") {
       chars.splice(i + 1, 0, ",");
     }
     numProcessed++;
   }
 
-  if (amount < 0) return '-$' + chars.join("");
+  if (amount < 0) return "-$" + chars.join("");
 
-  return '$' + chars.join("");
+  return "$" + chars.join("");
 }

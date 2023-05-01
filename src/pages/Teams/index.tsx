@@ -1,74 +1,85 @@
-import { ResponsivePie } from "@nivo/pie";
-import PieChart from "../../components/PieChart";
+import { ResponsiveBar } from "@nivo/bar";
 import { useTheme } from "@mui/material";
 import { tokens } from "../../assets/theme/theme";
+import { BarChartType } from "../../datamodel/charts.d";
+import { getBarChartTypeSpecificProps } from "../../components/helper";
 
 const data = [
   {
-    "id": "php",
-    "label": "php",
-    "value": 289,
-    "color": "hsl(89, 70%, 50%)",
-    "test": 2
-  },
-  {
-    "id": "python",
-    "label": "python",
-    "value": 364,
-    "color": "hsl(36, 70%, 50%)",
-    "test": 2
-  },
-  {
-    "id": "make",
-    "label": "make",
-    "value": 108,
-    "color": "hsl(58, 70%, 50%)",
-    "test": 2
-  },
-  {
-    "id": "lisp",
-    "label": "lisp",
-    "value": 593,
-    "color": "hsl(349, 70%, 50%)",
-    "test": 2
-  },
-  {
-    "id": "c",
-    "label": "c",
-    "value": 492,
-    "color": "hsl(123, 70%, 50%)",
-    "test": 2
+    chartName: 'Accounts Breakdown',
+    cash: 85,
+    debitStGeorge: 150,
+    debitCommBank: 50,
+    hecsSaving: 2000,
+    japanSaving: 1200,
+    generalSaving: 7000,
   }
-]
+];
 
 const TeamsPage = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
+  const typeSpecificProps = getBarChartTypeSpecificProps(BarChartType.DASHBOARD_ACCOUNTS_BREAKDOWN);
+
   return (
-    <div style={{ height: '310px', width: '600px' }}>
-      <ResponsivePie
+    <div style={{ width: 500, height: 200 }}>
+      <ResponsiveBar
+        {...typeSpecificProps}
         data={data}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
-        cornerRadius={3}
-        activeOuterRadiusOffset={15}
-        borderWidth={4}
+        keys={[
+          'cash',
+          'debitStGeorge',
+          'debitCommBank',
+          'hecsSaving',
+          'japanSaving',
+          'generalSaving'
+        ]}
+        valueScale={{ type: 'linear' }}
+        indexScale={{ type: 'band', round: true }}
         borderColor={{
-            from: 'color',
-            modifiers: [
-                [
-                    'darker',
-                    0.5
-                ]
+          from: 'color',
+          modifiers: [
+            [
+              'darker',
+              1.6
             ]
+          ]
         }}
-        enableArcLabels={false}
-        arcLinkLabel={data => `${data.label}: ${data.formattedValue}`}
-        arcLinkLabelsTextColor={colors.greenAccent[100]}
-        arcLinkLabelsThickness={2}
-        arcLinkLabelsColor={{ from: 'color' }}
-        arcLinkLabelsStraightLength={36}
-    />
+        labelTextColor={{
+          from: 'color',
+          modifiers: [
+            [
+              'darker',
+              2
+            ]
+          ]
+        }}
+        legends={[
+          {
+            dataFrom: 'keys',
+            anchor: 'right',
+            direction: 'column',
+            justify: false,
+            translateX: 120,
+            translateY: 0,
+            itemsSpacing: 3,
+            itemWidth: 100,
+            itemHeight: 20,
+            itemDirection: 'left-to-right',
+            itemOpacity: 0.8,
+            symbolSize: 10,
+            effects: [
+              {
+                on: 'hover',
+                style: {
+                  itemOpacity: 1
+                }
+              }
+            ]
+          }
+        ]}
+      />
     </div>
   )
 }

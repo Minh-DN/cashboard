@@ -1,5 +1,5 @@
 import { useTheme } from "@mui/material"
-import '../../assets/scss/pages/SignIn.scss';
+import '../../assets/scss/pages/signin.scss';
 import { useDispatch, useSelector } from "react-redux";
 import { toggleColorMode } from "../../redux/slices/themeSlice";
 import { selectAuthState, toggleAuth } from "../../redux/slices/authSlice";

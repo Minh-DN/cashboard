@@ -1,3 +1,26 @@
+/* Row 3 Mock Data */
+export const mockAccountsBreakdownData = {
+  keys: [
+    'Cash',
+    'Debit CommBank',
+    'Debit St. George',
+    'HECS Saving',
+    'Japan Saving',
+    'General Saving'
+  ],
+  data: [
+    {
+      'chartName:': 'Accounts Breakdown',
+      'Cash': 85,
+      'Debit CommBank': 150,
+      'Debit St. George': 50,
+      'HECS Saving': 2000,
+      'Japan Saving': 1200,
+      'General Saving': 7000,
+    }
+  ]
+};
+
 /* Row 2 Mock Data */
 export interface ExpenseBreakdownData {
   category: string,
