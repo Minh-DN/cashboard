@@ -14,6 +14,16 @@ export const formExpenseBreakdownPieChartData = (data: ExpenseBreakdownData[]): 
   })
 }
 
-export const capitaliseFirstLetter = (str: string) => {
+export const capitaliseFirstLetter = (str: string): string => {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+export const getDayAndDate = (date: Date) => {
+  const dayNameIndex = date.getDay();
+  const dayName = dayNames[dayNameIndex];
+  const dateNum = date.getDate();
+
+  return [dayName, dateNum];
 }

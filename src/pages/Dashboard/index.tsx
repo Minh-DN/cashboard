@@ -10,10 +10,10 @@ import SavingsContributionCard from './components/SavingsContributionCard';
 import NetAmountCard from './components/NetAmountCard';
 import ExpenseBreakdownCard from './components/ExpenseBreakdownCard';
 import BlankCell from './components/BlankCell';
+import TotalTransactionsCard from './components/TotalTransactionsCard';
+import AccountsBreakdownCard from './components/AccountsBreakdownCard';
 
 const DashboardPage = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
 
   const {
     mockIncomeData, 
@@ -42,14 +42,14 @@ const DashboardPage = () => {
         {/* ROW 2 */}
         <div className='dashboard__row-two'>
           <ExpenseBreakdownCard data={mockExpenseBreakdownData} />
-          <BlankCell />
+          <TotalTransactionsCard />
         </div>
 
         {/* ROW 3 */}
         <div className='dashboard__row-three'>
           <BlankCell />
           <BlankCell />
-          <BlankCell />
+          <AccountsBreakdownCard />
         </div>
       </div>
 
