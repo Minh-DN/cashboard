@@ -8,6 +8,12 @@
   flex: 1;
 
   overflow: auto;
+  padding: 0 20px 0px 25px;
+  margin-bottom: 1%;
+  
+  flex: 1;
+
+  overflow: auto;
 }
 
 .dashboard-rows-container {
@@ -104,6 +110,7 @@
 .dashboard__row-two {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
+
 
   gap: 20px;
 }
@@ -268,6 +275,20 @@
   gap: 20px;
 }
 
+/* Upcoming Subscriptions Card */
+.dashboard__upcoming-subscriptions-card {
+  height: 200px;
+  overflow: auto;
+
+  // .title {
+  //   font-weight: 900;
+  //   font-size: 16px;
+  //   line-height: 16px;
+
+  //   margin-top: 10px;
+  // }
+}
+
 /* Accounts Breakdown Card */
 .dashboard__accounts-breakdown-card {
   display: flex;
@@ -291,8 +312,6 @@
     flex-grow: 1;
   }
 }
-
-
 
 /* Add Box Shadow to Cards */
 .dashboard__key-stats-card,

@@ -47,12 +47,12 @@ const Header = () => {
             <LightModeOutlinedIcon />
           )}
         </IconButton>
-        <IconButton>
+        {/* <IconButton>
           <NotificationsOutlinedIcon />
         </IconButton>
         <IconButton>
           <SettingsOutlinedIcon />
-        </IconButton>
+        </IconButton> */}
         <IconButton onClick={() => dispatch(toggleAuth())}>
           <PersonOutlinedIcon />
         </IconButton>
