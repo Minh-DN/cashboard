@@ -3,6 +3,7 @@ import { useTheme } from '@mui/material';
 
 import './../../assets/scss/pages/dashboard.scss';
 import * as mockData from '../../assets/mockData/mockData';
+import * as helper from './components/helper';
 
 import IncomeCard from './components/IncomeCard';
 import ExpenseCard from './components/ExpenseCard';
@@ -12,6 +13,7 @@ import ExpenseBreakdownCard from './components/ExpenseBreakdownCard';
 import BlankCell from './components/BlankCell';
 import TotalTransactionsCard from './components/TotalTransactionsCard';
 import AccountsBreakdownCard from './components/AccountsBreakdownCard';
+import UpcomingSubscriptionsCard from './components/UpcomingSubscriptionsCard';
 
 const DashboardPage = () => {
 
@@ -27,7 +29,7 @@ const DashboardPage = () => {
     <div className='dashboard-container'>
 
       <div className='page-header'>
-        <h1>Your April</h1>
+        <h1>Your {helper.getCurrentMonth()}</h1>
       </div>
 
       <div className='dashboard-rows-container'>

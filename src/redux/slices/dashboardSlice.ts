@@ -10,14 +10,18 @@ import { RootState } from "../store";
  * 
  * By using redux to manage rowTwoHeight, Card 1 can 'share' its height with 
  * Card 2. Currently, this is the most suitable solution I can think of. 
+ * 
+ * EDIT: same issue for Row 3 Card 1 (Upcoming Subscriptions Card)
  */
 
 interface DashboardState {
   rowTwoHeight: number | null, 
+  rowThreeHeight: number | null,
 }
 
 const initialState: DashboardState = {
   rowTwoHeight: null,
+  rowThreeHeight: null,
 }
 
 const dashboardSlice = createSlice({
@@ -26,14 +30,18 @@ const dashboardSlice = createSlice({
   reducers: {
     setRowTwoHeight(state, action) {
       state.rowTwoHeight = action.payload;
+    },
+    setRowThreeHeight(state, action) {
+      state.rowThreeHeight = action.payload;
     }
   }
 })
 
 // Selectors
 export const selectRowTwoHeight = (state: RootState) => state.dashboard.rowTwoHeight;
+export const selectRowThreeHeight = (state: RootState) => state.dashboard.rowThreeHeight;
 
 // Actions
-export const { setRowTwoHeight } = dashboardSlice.actions;
+export const { setRowTwoHeight, setRowThreeHeight } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

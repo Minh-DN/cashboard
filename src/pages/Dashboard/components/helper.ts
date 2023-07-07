@@ -27,3 +27,10 @@ export const getDayAndDate = (date: Date) => {
 
   return [dayName, dateNum];
 }
+
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+export const getCurrentMonth = () => {
+  const monthNameIndex = new Date().getMonth();
+  return monthNames[monthNameIndex];
+}
