@@ -8,6 +8,12 @@
   flex: 1;
 
   overflow: auto;
+  padding: 0 20px 0px 25px;
+  margin-bottom: 1%;
+  
+  flex: 1;
+
+  overflow: auto;
 }
 
 .dashboard-rows-container {
@@ -104,6 +110,7 @@
 .dashboard__row-two {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
+
 
   gap: 20px;
 }

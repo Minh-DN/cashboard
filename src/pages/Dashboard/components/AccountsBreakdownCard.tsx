@@ -1,3 +1,4 @@
+
 import BarChart from "../../../components/BarChart";
 import { BarChartType } from "../../../datamodel/charts.d";
 import { mockAccountsBreakdownData } from "../../../assets/mockData/mockData";
