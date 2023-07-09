@@ -11,9 +11,9 @@ https://minh-dn.github.io/cashboard/
 
 ### Progress
 Phase 1: Build UI to display data
+<br/>
 ![](https://geps.dev/progress/65?dangerColor=1672E8&warningColor=1672E8&successColor=1672E8)
 
-<br />
 <details>
 <summary>Next phases</summary>
 <br>
